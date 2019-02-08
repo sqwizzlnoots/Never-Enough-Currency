@@ -128,7 +128,31 @@ public class CurrencyUtils {
 	public static void dropMoneyAmount(float value, World world, double x, double y, double z) {
 		float newValue = value;
 
-		if (value >= 100) {
+		if (value >= 2000) {
+			EntityItem twothousands = new EntityItem(world, x, y, z, new ItemStack(ItemHandler.twoThousandDollarBill, (int) Math.floor(value / 2000)));
+			world.spawnEntity(twothousands);
+			newValue -= (2000 * Math.floor(newValue / 2000));
+		}
+
+		if (newValue >= 1000) {
+			EntityItem thousands = new EntityItem(world, x, y, z, new ItemStack(ItemHandler.oneThousandDollarBill, (int) Math.floor(value / 1000)));
+			world.spawnEntity(thousands);
+			newValue -= (1000 * Math.floor(newValue / 1000));
+		}
+
+		if (newValue >= 500) {
+			EntityItem fivehundreds = new EntityItem(world, x, y, z, new ItemStack(ItemHandler.fiveHundredDollarBill, (int) Math.floor(value / 500)));
+			world.spawnEntity(fivehundreds);
+			newValue -= (500 * Math.floor(newValue / 500));
+		}
+
+		if (newValue >= 200) {
+			EntityItem twohundreds = new EntityItem(world, x, y, z, new ItemStack(ItemHandler.twoHundredDollarBill, (int) Math.floor(value / 200)));
+			world.spawnEntity(twohundreds);
+			newValue -= (200 * Math.floor(newValue / 200));
+		}
+
+		if (newValue >= 100) {
 			EntityItem hundreds = new EntityItem(world, x, y, z, new ItemStack(ItemHandler.hundredDollarBill, (int) Math.floor(value / 100)));
 			world.spawnEntity(hundreds);
 			newValue -= (100 * Math.floor(newValue / 100));
@@ -185,6 +209,26 @@ public class CurrencyUtils {
 		float newValue = value;
 
 		ArrayList items = new ArrayList<ItemStack>();
+
+		if (value >= 2000) {
+			items.add(new ItemStack(ItemHandler.twoThousandDollarBill, (int) Math.floor(value / 2000)));
+			newValue -= (2000 * Math.floor(newValue / 2000));
+		}
+
+		if (value >= 1000) {
+			items.add(new ItemStack(ItemHandler.oneThousandDollarBill, (int) Math.floor(value / 1000)));
+			newValue -= (1000 * Math.floor(newValue / 1000));
+		}
+
+		if (value >= 500) {
+			items.add(new ItemStack(ItemHandler.fiveHundredDollarBill, (int) Math.floor(value / 500)));
+			newValue -= (500 * Math.floor(newValue / 500));
+		}
+
+		if (value >= 200) {
+			items.add(new ItemStack(ItemHandler.twoHundredDollarBill, (int) Math.floor(value / 200)));
+			newValue -= (200 * Math.floor(newValue / 200));
+		}
 
 		if (value >= 100) {
 			items.add(new ItemStack(ItemHandler.hundredDollarBill, (int) Math.floor(value / 100)));
