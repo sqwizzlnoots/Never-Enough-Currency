@@ -23,7 +23,9 @@ public class ItemHandler {
 
 	public static Item penny, nickel, dime, quarter;
 	public static Item dollarBill, fiveDollarBill, tenDollarBill,
-			twentyDollarBill, fiftyDollarBill, hundredDollarBill;
+			twentyDollarBill, fiftyDollarBill, hundredDollarBill,
+			twoHundredDollarBill, fiveHundredDollarBill,
+			oneThousandDollarBill, twoThousandDollarBill;
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -43,6 +45,10 @@ public class ItemHandler {
 		twentyDollarBill = register(new ItemMoneyBase("twenty_dollar_bill", 20F));
 		fiftyDollarBill = register(new ItemMoneyBase("fifty_dollar_bill", 50F));
 		hundredDollarBill = register(new ItemMoneyBase("hundred_dollar_bill", 100F));
+		twoHundredDollarBill = register(new ItemMoneyBase("two_hundred_dollar_bill", 200F));
+		fiveHundredDollarBill = register(new ItemMoneyBase("five_hundred_dollar_bill", 500F));
+		oneThousandDollarBill = register(new ItemMoneyBase("one_thousand_dollar_bill", 1000F));
+		twoThousandDollarBill = register(new ItemMoneyBase("two_thousand_dollar_bill", 2000F));
 
 		for (ItemBlock ib : itemBlocks) {
 			registry.register(ib);
