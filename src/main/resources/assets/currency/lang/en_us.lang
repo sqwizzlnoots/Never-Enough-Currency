@@ -24,6 +24,11 @@ item.ten_dollar_bill.name=10 Dollar Bill
 item.twenty_dollar_bill.name=20 Dollar Bill
 item.fifty_dollar_bill.name=50 Dollar Bill
 item.hundred_dollar_bill.name=100 Dollar Bill
+item.two_hundred_dollar_bill.name=200 Dollar Bill
+item.five_hundred_dollar_bill.name=500 Dollar Bill
+item.one_thousand_dollar_bill.name=1000 Dollar Bill
+item.two_thousand_dollar_bill.name=2000 Dollar Bill
+
 
 currency.name.waila=Name:
 currency.nameshop.waila=Shop Name:
